@@ -1,12 +1,20 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 app.use(express.json());
 
+// 루트 경로
+app.get('/', (req, res) => {
+  res.send('도서관리 API 서버가 잘 실행되고 있습니다.');
+});
+
 let books = [
   { id: 1, title: "인터넷프로그래밍", author: "윤OO" },
-  { id: 2, title: "자바스크립트 기초", author: "윤찬O" }
+  { id: 2, title: "자바스크립트 기초", author: "윤찬O" },
+  { id: 3, title: "노드JS 입문", author: "김진수" },
+  { id: 4, title: "HTML과 CSS", author: "박민희" },
+  { id: 5, title: "React 시작하기", author: "이승현" }
 ];
 
 // 도서 목록 조회
